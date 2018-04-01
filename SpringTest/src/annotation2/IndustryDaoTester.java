@@ -14,9 +14,8 @@ public class IndustryDaoTester {
 //		IndustryDaoTester tester=new IndustryDaoTester();
 //		tester.dao.getData("this is example");
 		
-//		ApplicationContext context=new AnnotationConfigApplicationContext("annotation2");
-//        ApplicationContext appContext = new AnnotationConfigApplicationContext("annotation3");
-		ApplicationContext context=new ClassPathXmlApplicationContext("./annotation2.xml");
+		ApplicationContext context=new AnnotationConfigApplicationContext("annotation2");
+//		ApplicationContext context=new ClassPathXmlApplicationContext("/annotation2.xml");
 		IndustryDaoService tester=context.getBean(IndustryDaoService.class);
 		tester.insertIndustry("IBM");
 	}
