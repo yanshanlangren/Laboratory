@@ -1,8 +1,9 @@
 package annotation2;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class FirstIndustryDao implements IndustryDao{
 
 	@Override

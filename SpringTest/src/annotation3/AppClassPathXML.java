@@ -7,7 +7,7 @@ public class AppClassPathXML {
 
 	public static void main(String[] args) {
 		
-		ApplicationContext context= new ClassPathXmlApplicationContext("/Annotation3.xml");
+		ApplicationContext context= new ClassPathXmlApplicationContext("Annotation3.xml");
 		CarService service=context.getBean(CarService.class);
 		service.addCar("BMW");
 	}

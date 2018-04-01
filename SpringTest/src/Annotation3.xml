@@ -8,7 +8,11 @@
 	    http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 	   
 	<context:annotation-config />
-    <context:component-scan base-package="annnotation3" />
+    <context:component-scan base-package="annotation3" />
+    
+    <bean id="sqliteCarDao" class="annotation3.CarDao" >
+        <constructor-arg name="driver" value="sqlite"/>
+    </bean> 
     
     
 </beans>
