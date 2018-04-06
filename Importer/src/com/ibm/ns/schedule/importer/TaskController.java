@@ -3,16 +3,18 @@ package com.ibm.ns.schedule.importer;
 import java.util.TimerTask;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
-import com.ibm.ns.schedule.ServiceManager;
 import com.ibm.ns.schedule.logger.LogService;
-import com.ibm.ns.schedule.logger.LogUtil;
 
+@Controller
 public class TaskController extends TimerTask {
 
     private static boolean isRunning  = false;   
     private static int t = 3;
-    private ImportTask ct = ServiceManager.getServiceManager().getService(ImportTask.class);   
+    
+    @Autowired
+    private ImportTask ct;   
     
 	@Autowired
 	private LogService logger; 

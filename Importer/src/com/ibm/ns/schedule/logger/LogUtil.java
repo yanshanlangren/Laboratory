@@ -2,9 +2,9 @@ package com.ibm.ns.schedule.logger;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class LogUtil implements LogService{
 
 	public void debug(Object caller, Object message, Throwable t) {

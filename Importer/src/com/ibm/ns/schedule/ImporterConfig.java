@@ -8,8 +8,6 @@ import com.ibm.ns.schedule.db.MongoDBDataBaseDAO;
 import com.ibm.ns.schedule.importer.ImportTask;
 import com.ibm.ns.schedule.logger.LogService;
 
-@Configuration
-@ComponentScan(basePackageClasses= {ImportTask.class,DataBaseService.class, LogService.class, MongoDBDataBaseDAO.class})
 public class ImporterConfig {
 
 }

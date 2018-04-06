@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class IndustryDaoService {
 
 	@Autowired
-	@Qualifier("FirstIndustryDao")
+	@Qualifier("firstIndustryDao")
 	private IndustryDao dao;
 	
 	public void insertIndustry(String str) {

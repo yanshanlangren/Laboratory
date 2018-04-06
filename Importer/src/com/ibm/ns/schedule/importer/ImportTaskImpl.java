@@ -14,22 +14,25 @@ import java.util.Map.Entry;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ibm.ns.alert.utils.Base64Util;
 import com.ibm.ns.alert.utils.JSONUtil;
 import com.ibm.ns.alert.utils.ZipUtil;
 import com.ibm.ns.schedule.Constants;
-import com.ibm.ns.schedule.ServiceManager;
 import com.ibm.ns.schedule.db.DataBaseService;
 import com.ibm.ns.schedule.logger.LogService;
-import com.ibm.ns.schedule.logger.LogUtil;
 
+@Service
 public class ImportTaskImpl implements ImportTask {
 	
 	private static int retry=3; 
 	
 	@Autowired
 	private LogService logger; 
+	
+	@Autowired
+	private DataBaseService db;
 
     public void execute() {
         logger.info(this, "Reading file in <"+Constants.FILE_PATH+">");
@@ -58,7 +61,6 @@ public class ImportTaskImpl implements ImportTask {
         for(File f:tmp.listFiles()) {
         	logger.info(this,"Trying to read file"+f.getAbsolutePath());
         	List<Map<String, Object>> list=this.getAllDataWithJSTreeJSONFormat(f.getAbsolutePath());
-        	DataBaseService db=ServiceManager.getServiceManager().getService(DataBaseService.class);
         	db.storeList(list,f.getName().split("\\.")[0]);
         	f.delete();
         }
@@ -189,6 +191,6 @@ public class ImportTaskImpl implements ImportTask {
 //    	String[] arr="data_a.json".split("\\.");
 //    	System.out.println(arr[0]);
     	
-    	ServiceManager.getServiceManager().getService(ImportTask.class).execute();
+//    	ServiceManager.getServiceManager().getService(ImportTask.class).execute();
     }
 }

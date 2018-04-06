@@ -7,9 +7,11 @@ import java.util.Map;
 
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ibm.ns.schedule.logger.LogService;
 
+@Service
 public class MongoDBDataBaseImpl implements DataBaseService{
 	
 	@Autowired
