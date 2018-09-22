@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import mvc.bean.User;
 
 @Controller
-public class UserController {
+public class IndexController {
 	
 	@RequestMapping("")
 	public String Create(Model model) {
